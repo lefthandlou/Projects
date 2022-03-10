@@ -1,0 +1,168 @@
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+    margin: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.header,
+.right-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1F2937;
+    color: white;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.right-links {
+    gap: 16px;
+    font-size: 15px;
+}
+
+.Container-One {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    padding: 50px;
+    background-color: #1F2937;
+    color: white;
+}
+
+.Intro-Text {
+    max-width: 400px;
+    min-width: 200px;
+}
+.Subheading-One {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.Heading-Text{
+    margin-bottom: 10px;
+}
+
+button {
+    width: 60px;
+    border-radius: 5px;
+    border: 1px;
+    height: 25px;
+    background-color: #3882F6;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.top-img {
+    max-height: 200px;
+    width: auto;
+}
+
+.Container-Two {
+    display: flex;
+    flex-flow: column;
+    padding: 75px;
+}
+
+.Subheading-Two {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.Images-Info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.Duo {
+    text-align: center;
+    color: #3d4857;
+}
+
+.duo-images {
+    height: auto;
+    width: 200px;
+    border: 3px solid;
+    border-radius: 15px;
+    border-color: #3882F6;
+}
+
+.Container-Three {
+    display: flex;
+    align-items: center;
+    height: 400px;
+    justify-content: center;
+    background-color: #E5E7EB;
+}
+
+.Flair {
+    display: flex;
+    flex-direction: column;
+}
+
+.Quote {
+    width: 400px;
+    text-align: center;
+    font-style: italic;
+    font-size: 26px;
+    color: #3d4857;
+}
+
+.Attribution {
+    text-align: right;
+    margin-top: 10px;
+    color: #3d4857;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.Container-Four {
+    display: flex;
+
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Card {
+    display: flex;
+    background-color: #3882F6;
+    border-radius: 5px;
+    padding: 40px;
+    width: 700px;
+    color: white;
+    justify-content: space-around;
+}
+
+.Subheading-Three {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.bottom {
+    border: 1px solid white;
+}
+
+.Footer {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    background-color: #1F2937;
+    color: white;
+    align-items: center;
+}
