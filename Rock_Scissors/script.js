@@ -18,12 +18,12 @@ function playRound (playerSelection, computerSelection) {
 
 }   
 
-
 function game() {
     let runningScore=0;
     for (let i = 0; i < 5; i++) {
         
-        let playerSelection=window.prompt('Enter rock, paper, or scissors');
+        let playerInput=window.prompt('Enter rock, paper, or scissors');
+        let playerSelection=playerInput.toLowerCase();
         let computerSelection=computerPlay();
         console.log('Player plays ' + playerSelection + ' ');
         let roundResult=((playRound(playerSelection, computerSelection)));
@@ -40,8 +40,4 @@ function game() {
     }
 }
 
-
-
-
-/*console.log(playRound(playerSelection, computerSelection));*/
 console.log(game());
