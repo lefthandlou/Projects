@@ -40,6 +40,7 @@ btnArray.forEach(button => {
 		console.log(button.classList);
 		
 		console.log(playRound());
+		button.classList.remove('clicked!');
 		}); 
 });
 
