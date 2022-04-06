@@ -2,19 +2,16 @@
 const buttons = document.querySelectorAll('.selections');
 let btnArray=Array.from(buttons);
 
+
 function computerPlay() {
-    /*Array with available computer plays*/
     let randomAttack=['rock' , 'paper' , 'scissors'];
-    /*randomly selects a play from the arra above and logs and stores the play*/
     let computerSelection=randomAttack[Math.floor(Math.random()*randomAttack.length)];
-    //console.log('Computer plays ' + computerSelection);
-    console.log(computerSelection);
+    console.log('Computer plays ' + computerSelection + '!');
 	return computerSelection;
 }
 
 
 function playRound () {
-
 	let computerSelection=computerPlay();
 	
     if ((document.getElementById('rock').classList.contains('clicked!')) && (computerSelection==='rock') || 
@@ -32,17 +29,33 @@ function playRound () {
 	};	
 }   
 
-btnArray.forEach(button => {
-	button.addEventListener('click', function handleClick (event) {
-		console.log('button clicked', event);
+function declarePlay() {
+	if ((document.getElementById('rock').classList.contains('clicked!'))) {
+		console.log('Player chose rock!');
+	} else if ((document.getElementById('paper').classList.contains('clicked!'))) {
+		console.log('Player chose paper!');
+	} else {
+		console.log('Player chose scissors!');
+	};
+}
 
-		button.classList.add('clicked!');
-		console.log(button.classList);
-		
-		console.log(playRound());
-		button.classList.remove('clicked!');
-		}); 
-});
+function playerInput() {
+	
+	btnArray.forEach(button => {
+		button.addEventListener('click', function handleClick (event) {
+			button.classList.add('clicked!');
+			//console.log(button.classList);
+
+			console.log(declarePlay());
+			console.log(playRound());
+			
+			button.classList.remove('clicked!');	
+			}); 
+	});
+	
+}
+
+console.log(playerInput());
 
 
 // https://bobbyhadz.com/blog/javascript-add-event-listener-to-all-elements-with-class
