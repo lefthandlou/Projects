@@ -1,6 +1,10 @@
 
 const buttons = document.querySelectorAll('.selections');
 let btnArray=Array.from(buttons);
+let clickCount=0;
+let tie='A tie!';
+let win='You win!';
+let lose='You lose!';
 
 
 function computerPlay() {
@@ -14,18 +18,19 @@ function computerPlay() {
 function playRound () {
 	let computerSelection=computerPlay();
 	
+	
     if ((document.getElementById('rock').classList.contains('clicked!')) && (computerSelection==='rock') || 
 		(document.getElementById('scissors').classList.contains('clicked!')) && (computerSelection==='scissors') ||
 		(document.getElementById('paper').classList.contains('clicked!')) && (computerSelection==='paper')) {
-		return 'A tie!';
+		return tie;
 	} else if ((document.getElementById('rock').classList.contains('clicked!')) && (computerSelection==='scissors') || 
 		(document.getElementById('scissors').classList.contains('clicked!')) && (computerSelection==='paper') ||
 		(document.getElementById('paper').classList.contains('clicked!')) && (computerSelection==='rock')) {
-        return 'You win!';
+        return win;
     } else if ((document.getElementById('rock').classList.contains('clicked!')) && (computerSelection==='paper') || 
 		(document.getElementById('scissors').classList.contains('clicked!')) && (computerSelection==='rock') ||
 		(document.getElementById('paper').classList.contains('clicked!')) && (computerSelection==='scissors')) {
-        return 'You lose!';
+        return lose;
 	};	
 }   
 
@@ -39,6 +44,16 @@ function declarePlay() {
 	};
 }
 
+function keepScore() {
+	let roundResult=playRound()
+	console.log(roundResult);
+	if (roundResult===win) {
+		clickCount++;
+		console.log(clickCount);	
+	};
+	console.log('Current score: ' + clickCount);
+}
+
 function playerInput() {
 	
 	btnArray.forEach(button => {
@@ -47,12 +62,10 @@ function playerInput() {
 			//console.log(button.classList);
 
 			console.log(declarePlay());
-			console.log(playRound());
-			
+			console.log(keepScore());
 			button.classList.remove('clicked!');	
 			}); 
 	});
-	
 }
 
 console.log(playerInput());
