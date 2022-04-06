@@ -1,10 +1,11 @@
 
 const buttons = document.querySelectorAll('.selections');
 let btnArray=Array.from(buttons);
-let clickCount=0;
+let playerScore=0;
+let computerScore=0;
 let tie='A tie!';
-let win='You win!';
-let lose='You lose!';
+let win='You win the round!';
+let lose='You lose the round!';
 
 
 function computerPlay() {
@@ -26,11 +27,13 @@ function playRound () {
 	} else if ((document.getElementById('rock').classList.contains('clicked!')) && (computerSelection==='scissors') || 
 		(document.getElementById('scissors').classList.contains('clicked!')) && (computerSelection==='paper') ||
 		(document.getElementById('paper').classList.contains('clicked!')) && (computerSelection==='rock')) {
-        return win;
+        playerScore++;
+		return win;
     } else if ((document.getElementById('rock').classList.contains('clicked!')) && (computerSelection==='paper') || 
 		(document.getElementById('scissors').classList.contains('clicked!')) && (computerSelection==='rock') ||
 		(document.getElementById('paper').classList.contains('clicked!')) && (computerSelection==='scissors')) {
-        return lose;
+        computerScore++
+		return lose;
 	};	
 }   
 
@@ -44,15 +47,20 @@ function declarePlay() {
 	};
 }
 
+
 function keepScore() {
 	let roundResult=playRound()
 	console.log(roundResult);
-	if (roundResult===win) {
-		clickCount++;
-		console.log(clickCount);	
+	if (playerScore >= 5) {
+		console.log('Player wins the game!')
+	} else if (computerScore >= 5) {
+		console.log('Computer wins the game!')
 	};
-	console.log('Current score: ' + clickCount);
+	console.log('Current player score: ' + playerScore);
+	console.log('Current computer score: ' + computerScore);
 }
+
+
 
 function playerInput() {
 	
