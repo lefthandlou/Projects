@@ -4,19 +4,69 @@
     <head>
         <title>Rock - Paper - Scissors</title>
         <meta charset ="UTF-8">
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
         
-        <h3>Rock, Paper, Scissors</h3>
-        <div>
-            <button id="rock" class="selections rock">Rock</button>
-            <p>Choose me!</p>
-            <button id="paper" class="selections paper">Paper</button>
-            <p>Choose me!</p>
-            <button id="scissors" class="selections scissors">Scissors</button>
-            <p>Choose me!</p>
-        
+        <h1 class="main-header">Rock, Paper, Scissors</h1>
+
+        <div class="playerButtons">
+            
+            <div class="rock-button">
+                <button id="rock" class="selections rock">Rock</button>
+                <p>Choose me!</p>
+            </div>
+
+            <div class="paper-button">
+                <button id="paper" class="selections paper">Paper</button>
+                <p>No, me!</p>
+            </div>
+
+            <div class="scissors-button">
+                <button id="scissors" class="selections scissors">Scissors</button>
+                <p>Me me me meeeee!</p>
+            </div>
+            
+        </div>
+
+        <div class="the-play-display">
+            <div class="player-chooses">
+                <h2 class="choice-header">Player selection:</h2>
+                <p class="player-play"></p>
+            </div>
+            
+            <div class="computer-chooses">
+                <h2 class="choice-header"> Computer selection:</h2>
+                <p class="computer-play"></p>
+            </div>
+        </div>
+
+        <div class="outcomes"> 
+            <div class="results-container">
+                <h2>Round Results</h2>
+                <p class="results"></p>
+            </div>
+
+            <div class="score">    
+
+                <h2 class="score-title">Score</h2>
+
+                <div class="p-c-scores">
+                    <div class="player-score">
+                        <h2>Player: </h2>
+                        <p class="player"></p>
+                    </div>
+
+                    <div class="computer-score">
+                        <h2>Computer:</h2>
+                        <p class="computer"></p>
+                    </div>
+                </div>
+
+                <p class="game-winner"></p>
+            </div>
+
         </div>
         
         <script src="eventListener.js"></script> 
