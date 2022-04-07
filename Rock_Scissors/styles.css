@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    text-align: center;
+    align-content: center;
+    background-color:rgb(255,218,193);
+    font-family: monospace;
+    color: #64619e
+
+}
+
+.main-header {
+    text-shadow: 2px 2px white;
+    font-size: 35px;    
+}
+.playerButtons {
+    display: flex;
+    align-items: center;
+}
+
+.rock-button,
+.paper-button,
+.scissors-button { 
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+button {
+    font-family: monospace;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(181,234,215);
+    border: 3px solid white;
+    border-radius: 40px;
+    color: #64619e;
+}
+
+.the-play-display {
+    display: flex;
+    flex-direction: row;
+    
+    background-color: rgb(226,240,203);
+}
+
+.player-chooses, 
+.computer-chooses  {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid white;
+    height: 100px;
+    
+    width: 320px;
+}
+
+
+.outcomes {
+    width: 650px;
+}
+.results-container {
+    border-radius: 400px;
+    margin-top: 30px;
+    border: 3px solid white;
+    height: 100px;
+    background-color: rgb(252,244,221);
+}
+
+.score-title {
+    border: 3px solid white;
+    background-color: rgb(255,154,162);
+    margin-bottom: 0px;
+}
+
+.p-c-scores {
+    display: flex;
+    flex-direction: row;
+}
+
+.player-score,
+.computer-score {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid white;
+    background-color: rgb(232, 236, 252);
+    height: 200px;
+    width: 320px;
+}
+
