@@ -7,16 +7,25 @@ body {
     background-color:rgb(255,218,193);
     font-family: monospace;
     color: #64619e
-
 }
 
 .main-header {
     text-shadow: 2px 2px white;
     font-size: 35px;    
 }
+
+.main-game-body {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+/* Buttons */
 .playerButtons {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .rock-button,
@@ -24,7 +33,7 @@ body {
 .scissors-button { 
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding-bottom: 30px;
 }
 
 button {
@@ -37,10 +46,25 @@ button {
     color: #64619e;
 }
 
+
+/*Play and score display*/
+
+.game-window {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*Player and computer choices display*/
+.main-round-window {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
 .the-play-display {
     display: flex;
-    flex-direction: row;
-    
+    justify-content: space-betweenl;
     background-color: rgb(226,240,203);
 }
 
@@ -49,27 +73,39 @@ button {
     display: flex;
     flex-direction: column;
     border: 3px solid white;
-    height: 100px;
-    
-    width: 320px;
+    width: 400px;
 }
 
+.choice-header {
+    border-bottom: 3px solid white;
+    margin: 0px;
+    padding: 10px;
+    align-items: center;
+    background-color: rgb(153,213,191)
+}
 
+.player-play, 
+.computer-play {
+    height: 300px;
+}
+
+/*Score keeper*/
 .outcomes {
-    width: 650px;
-}
-.results-container {
-    border-radius: 400px;
-    margin-top: 30px;
     border: 3px solid white;
-    height: 100px;
-    background-color: rgb(252,244,221);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 175px;
+    margin-top: 80px;
 }
 
 .score-title {
-    border: 3px solid white;
+    display: flex;
+    justify-content: center;
     background-color: rgb(255,154,162);
-    margin-bottom: 0px;
+    padding: 10px;
+    margin: 0px;
+    border-bottom: 3px solid white;
 }
 
 .p-c-scores {
@@ -81,9 +117,24 @@ button {
 .computer-score {
     display: flex;
     flex-direction: column;
-    border: 3px solid white;
+    /*border: 3px solid white;*/
     background-color: rgb(232, 236, 252);
-    height: 200px;
-    width: 320px;
+    height: 400px;
+    width: 110px;
 }
 
+/*Round result display*/
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 400px;
+    margin-top: 30px;
+    border: 3px solid white;
+    background-color: rgb(252,244,221);
+}
+
+.results {
+    margin-bottom: 25px;
+}
