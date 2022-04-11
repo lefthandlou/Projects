@@ -1,18 +1,14 @@
 
 const buttons = document.querySelectorAll('.selections');
-let declarePlayer=document.querySelector('.player-play');
-let declareComputer=document.querySelector('.computer-play');
-let resultOfRound=document.querySelector('.results');
-let runScorePlayer=document.querySelector('.player');
-let runScoreComputer=document.querySelector('.computer')
-let gameWinner=document.querySelector('.game-winner');
 let btnArray=Array.from(buttons);
 let playerScore=0;
 let computerScore=0;
-
+let gameWinner=document.querySelector('.game-winner');
+let winnerBody=document.querySelector('.winner');
+let tryAgainButton=document.createElement('button');
 
 function computerPlay() {
-
+	let declareComputer=document.querySelector('.computer-play');
     let randomAttack=['rock' , 'paper' , 'scissors'];
 
     let computerSelection=randomAttack[Math.floor(Math.random()*
@@ -27,6 +23,7 @@ function computerPlay() {
 function playRound () {	
 
 	let computerSelection=computerPlay();
+	let resultOfRound=document.querySelector('.results');
 	
 	
     if ((document.getElementById('rock').classList.contains('clicked!')) 		&& 
@@ -71,6 +68,8 @@ function playRound () {
 
 function declarePlay() {
 
+	let declarePlayer=document.querySelector('.player-play');
+	
 	if ((document.getElementById('rock').classList.contains('clicked!'))) {
 		declarePlayer.textContent='Player chose rock!';
 
@@ -81,19 +80,41 @@ function declarePlay() {
 	};
 }
 
+function newGame() {
+	
+	winnerBody.append(gameWinner);
+	tryAgainButton.textContent='Try again?';
+	winnerBody.append(tryAgainButton);
+	tryAgainButton.addEventListener('click', () => location.reload());
+	setStyle();
+	
+}
+
+function setStyle () {
+	winnerBody.style.border='3px solid white'; 
+	winnerBody.style.marginBottom='15px';
+	winnerBody.style.width='485px';
+	winnerBody.style.backgroundColor='#DBF3FA';
+	tryAgainButton.style.marginBottom='10px';
+	gameWinner.style.fontSize='16px';
+}
 
 function keepScore() {
 	let roundResult=playRound()
-
+	let runScorePlayer=document.querySelector('.player');
+	let runScoreComputer=document.querySelector('.computer')
+	
 	if (playerScore >= 5) {
 		gameWinner.textContent='Player wins the game!'
+		newGame();
 
 	} else if (computerScore >= 5) {
 		gameWinner.textContent='Computer wins the game!'
+		newGame();
 	};
 
-	runScorePlayer.textContent=('Current player score: ' + playerScore);
-	runScoreComputer.textContent=('Current computer score: ' + computerScore);
+	runScorePlayer.textContent=(playerScore);
+	runScoreComputer.textContent=(computerScore);
 }
 
 
@@ -110,7 +131,6 @@ function playerInput() {
 			console.log(keepScore());	
 		
 			button.classList.remove('clicked!');	
-
 			}); 
 	});
 }
