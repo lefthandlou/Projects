@@ -6,6 +6,9 @@ let computerScore=0;
 let gameWinner=document.querySelector('.game-winner');
 let winnerBody=document.querySelector('.winner');
 let tryAgainButton=document.createElement('button');
+let buttonsWindow=document.querySelector('.playerButtons');
+let roundDisplay=document.querySelector('.main-round-window');
+
 
 function computerPlay() {
 	let declareComputer=document.querySelector('.computer-play');
@@ -86,18 +89,21 @@ function newGame() {
 	tryAgainButton.textContent='Try again?';
 	winnerBody.append(tryAgainButton);
 	tryAgainButton.addEventListener('click', () => location.reload());
-	setStyle();
-	
+	setStyle();	
 }
 
 function setStyle () {
 	winnerBody.style.border='3px solid white'; 
-	winnerBody.style.marginBottom='15px';
-	winnerBody.style.width='485px';
+	winnerBody.style.width='480px';
 	winnerBody.style.backgroundColor='#DBF3FA';
+	winnerBody.style.marginTop='20px';
+	winnerBody.style.marginBottom='15px';
 	tryAgainButton.style.marginBottom='10px';
 	gameWinner.style.fontSize='16px';
+	buttonsWindow.remove();	
+	roundDisplay.remove();
 }
+
 
 function keepScore() {
 	let roundResult=playRound()
@@ -107,7 +113,6 @@ function keepScore() {
 	if (playerScore >= 5) {
 		gameWinner.textContent='Player wins the game!'
 		newGame();
-
 	} else if (computerScore >= 5) {
 		gameWinner.textContent='Computer wins the game!'
 		newGame();
@@ -116,8 +121,6 @@ function keepScore() {
 	runScorePlayer.textContent=(playerScore);
 	runScoreComputer.textContent=(computerScore);
 }
-
-
 
 function playerInput() {
 	
@@ -131,7 +134,10 @@ function playerInput() {
 			console.log(keepScore());	
 		
 			button.classList.remove('clicked!');	
+
+			
 			}); 
+		
 	});
 }
 
