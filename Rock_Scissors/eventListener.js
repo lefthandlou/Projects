@@ -17,7 +17,7 @@ function computerPlay() {
     let computerSelection=randomAttack[Math.floor(Math.random()*
 		randomAttack.length)];
     
-	declareComputer.textContent=('Computer plays ' + computerSelection + '!');
+	declareComputer.textContent=(computerSelection + '!');
 	
 	return computerSelection;
 }
@@ -74,12 +74,11 @@ function declarePlay() {
 	let declarePlayer=document.querySelector('.player-play');
 	
 	if ((document.getElementById('rock').classList.contains('clicked!'))) {
-		declarePlayer.textContent='Player chose rock!';
-
+		declarePlayer.textContent='rock!';
 	} else if ((document.getElementById('paper').classList.contains('clicked!'))) {
-		declarePlayer.textContent='Player chose paper!';
+		declarePlayer.textContent='paper!';
 	} else {
-		declarePlayer.textContent='Player chose scissors!';
+		declarePlayer.textContent='scissors!';
 	};
 }
 
@@ -103,7 +102,6 @@ function setStyle () {
 	buttonsWindow.remove();	
 	roundDisplay.remove();
 }
-
 
 function keepScore() {
 	let roundResult=playRound()
