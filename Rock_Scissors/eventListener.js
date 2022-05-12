@@ -8,6 +8,8 @@ let winnerBody=document.querySelector('.winner');
 let tryAgainButton=document.createElement('button');
 let buttonsWindow=document.querySelector('.playerButtons');
 let roundDisplay=document.querySelector('.main-round-window');
+let playerPlay=document.querySelector('.player-play');
+let computerPlays=document.querySelector('.computer-play');
 
 
 function computerPlay() {
@@ -27,7 +29,6 @@ function playRound () {
 
 	let computerSelection=computerPlay();
 	let resultOfRound=document.querySelector('.results');
-	
 	
     if ((document.getElementById('rock').classList.contains('clicked!')) 		&& 
 			(computerSelection==='rock') 		|| 
@@ -75,10 +76,14 @@ function declarePlay() {
 	
 	if ((document.getElementById('rock').classList.contains('clicked!'))) {
 		declarePlayer.textContent='rock!';
+		clipArt();
 	} else if ((document.getElementById('paper').classList.contains('clicked!'))) {
 		declarePlayer.textContent='paper!';
+		clipArt();
 	} else {
 		declarePlayer.textContent='scissors!';
+		clipArt();
+		
 	};
 }
 
@@ -120,6 +125,31 @@ function keepScore() {
 	runScoreComputer.textContent=(computerScore);
 }
 
+function clipArt() {
+	if ((document.getElementById('rock').classList.contains('clicked!'))) {
+		let rockPic=document.createElement("img");
+		rockPic.src="./clipart/rock.svg";
+		playerPlay.append(rockPic);
+	} else if ((document.getElementById('scissors').classList.contains('clicked!'))) {
+		let scissorsPic=document.createElement("img");
+		scissorsPic.src="./clipart/scissors.svg";
+		playerPlay.append(scissorsPic);
+	} else if ((document.getElementById('paper').classList.contains('clicked!'))) {
+		let paperPic=document.createElement("img");
+		paperPic.src="./clipart/paper.svg";
+		playerPlay.append(paperPic);
+	};
+}
+
+
+function computerClipArt() {
+	if (computerSelection==='rock') {
+		let rockCompPic=document.createElement("img");
+		rockCompPic.src="./clipart/rock.svg";
+		computerPlays.append(rockCompPic);
+	}
+} 
+
 function playerInput() {
 	
 	btnArray.forEach(button => {
@@ -132,8 +162,6 @@ function playerInput() {
 			console.log(keepScore());	
 		
 			button.classList.remove('clicked!');	
-
-			
 			}); 
 		
 	});
